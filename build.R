@@ -1,4 +1,5 @@
 packrat::init()
 packrat::snapshot()
+dir.create('packrat/bundles')
 packrat::bundle(file = 'packrat/bundles/rDatasetViewer.tar.gz')
 packrat::disable()
