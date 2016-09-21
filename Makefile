@@ -1,9 +1,12 @@
 all: container
 
+.PHONY: container clean
+
+clean:
+	rm -f packrat/bundles/*.tar.gz
+
 packrat/bundles/rDatasetViewer.tar.gz: ui.R server.R build.R
 	Rscript build.R
-
-.PHONY: container
 
 container: packrat/bundles/rDatasetViewer.tar.gz
 	docker build -t geraudster/rdatasetviewer .
